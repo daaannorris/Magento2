@@ -3,7 +3,7 @@
 version: '2'
 services:
   apache:
-    image: rafaelcgstz/magento2
+    image: daaannorris/magento2
     # build: .
     ports:
       - "8084:80" # web
