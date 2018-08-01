@@ -1,16 +1,23 @@
+# https://github.com/daaannorris/Magento2
+
 version: '2'
 services:
   apache:
-    image: rafaelcgstz/magento2
+    image: daaannorris/magento2
     # build: .
     ports:
-      - "80:80" # web
+      - "8084:80" # web
       - "9001:9000" # xdebug
       # - "35729:35729" # live reload
     volumes:
-      - ./src:/var/www/html
       - ~/.composer:/var/www/.composer
       - ~/.npm:/var/www/.npm
+      - ../composer.json:/var/www/html/composer.json
+      - ../composer.lock:/var/www/html/composer.lock
+      - ../app/code:/var/www/html/app/code
+      - ../app/design/frontend:/var/www/html/app/design/frontend
+      - ../var/report:/var/www/html/var/report
+      - ../var/log:/var/www/html/var/log
       # - ~/.nvm:/var/www/.nvm
     environment:
       XDEBUG_CONFIG: "remote_host=localhost"
