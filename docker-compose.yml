@@ -15,6 +15,7 @@ services:
       - ../composer.json:/var/www/html/composer.json
       - ../composer.lock:/var/www/html/composer.lock
       - ../app/code:/var/www/html/app/code
+      - ../pub/media:/var/www/html/pub/media
       - ../app/design/frontend:/var/www/html/app/design/frontend
       - ../var/report:/var/www/html/var/report
       - ../var/log:/var/www/html/var/log
