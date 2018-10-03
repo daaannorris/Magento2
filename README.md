@@ -44,6 +44,18 @@ install-magento2
 
 You can specify the version that want install (e.g. `install-magento2 2.2`).
 
+Once installed add the below to your volumes within `docker-compose.yml`
+```
+      - ~/.composer:/var/www/.composer
+      - ../composer.json:/var/www/html/composer.json
+      - ../composer.lock:/var/www/html/composer.lock
+      - ../app/code:/var/www/html/app/code
+      - ../pub/media:/var/www/html/pub/media
+      - ../app/design/frontend:/var/www/html/app/design/frontend
+      - ../var/report:/var/www/html/var/report
+      - ../var/log:/var/www/html/var/log
+```
+
 ### Panels
 
 Enjoy your new panels!
